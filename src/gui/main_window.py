@@ -1,14 +1,28 @@
 """Main GUI window."""
 
-from PyQt6.QtWidgets import QMainWindow, QPushButton
+from PyQt6.QtWidgets import (
+    QMainWindow,
+    QPushButton,
+    QHBoxLayout,
+    QTextEdit,
+    QWidget
+)
+from PyQt6.QtGui import QPalette, QColor
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-
         self.setWindowTitle("QMK RGB Simulator")
-        button = QPushButton("Press Me!")
 
-        # Set the central widget of the Window.
-        self.setCentralWidget(button)
+        layout = QHBoxLayout()
+        pattern_code = QTextEdit()
+
+        keyboard = QPushButton("ESC")
+
+        layout.addWidget(pattern_code)
+        layout.addWidget(keyboard)
+
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
