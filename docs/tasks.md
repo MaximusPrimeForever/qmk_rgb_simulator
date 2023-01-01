@@ -9,9 +9,9 @@
 - [ ] Compile QMK animation file.
 - [ ] Load QMK animation file.
 - [ ] Emulate environment for the animation.
-    - [ ] Build a pipeline where
-          1. Keyboard state from the GUI goes in
-          2. The compiled RGB pattern updates the keyboard state
-          3. New keyboard state comes out to update the GUI
+    - [ ] Build a pipeline where:  
+          1. Keyboard state from the GUI goes in.  
+          2. The compiled RGB pattern updates the keyboard state.  
+          3. New keyboard state comes out to update the GUI.  
 - [ ] Render animation output on GUI.
 - [ ] Integrate with VIA.
