@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import QWidget
 
 from src.gui.keyboard import QKey
 from src.layout import Key, KeyboardLayout
-from src.config.gui import GAP_BETWEEN_KEYS, KEY_SIZE
+from src.config.gui import PADDING_BETWEEN_KEYS, KEY_SIZE, KEYBOARD_MARGIN
 
 
 class QKeyboard(QWidget):
@@ -19,7 +19,10 @@ class QKeyboard(QWidget):
         width_total = self.keyboard_layout.width_total * KEY_SIZE
         height_total = self.keyboard_layout.height_total * KEY_SIZE
 
-        self.setMinimumSize(int(width_total), int(height_total))
+        self.setMinimumSize(
+            int(width_total + KEYBOARD_MARGIN),
+            int(height_total + KEYBOARD_MARGIN)
+        )
         self._place_keys()
         self.show()
 
@@ -32,6 +35,6 @@ class QKeyboard(QWidget):
 
                 key_button = QKey(key, parent=self)
                 key_button.move(
-                    int(GAP_BETWEEN_KEYS + key.x * KEY_SIZE),
-                    int(GAP_BETWEEN_KEYS + key.y * KEY_SIZE)
+                    int(PADDING_BETWEEN_KEYS + key.x * KEY_SIZE),
+                    int(PADDING_BETWEEN_KEYS + key.y * KEY_SIZE)
                 )
