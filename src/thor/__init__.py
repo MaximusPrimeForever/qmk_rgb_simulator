@@ -1,0 +1,1 @@
+"""Light(n)ing simulator."""
