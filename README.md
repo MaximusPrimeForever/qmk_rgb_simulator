@@ -1,5 +1,5 @@
-# qmk_rgb_simulator
-A simulator for making advanced RGB patterns.
+# Thor
+A QMK light(n)ing simulator for advanced RGB patterns.
 
 ## Features
 * Load a keyboard layout (json).

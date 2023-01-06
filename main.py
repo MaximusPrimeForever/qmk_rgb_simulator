@@ -10,7 +10,7 @@ if __name__ == "__main__":
     app = QApplication([])
 
     if len(sys.argv) != 2:
-        raise Exception("Provide path to keyboard info.json file.")
+        sys.exit("Proive path to keyboard info.json file.")
 
     window = MainWindow(sys.argv[1])
     window.show()

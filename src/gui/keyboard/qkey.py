@@ -22,7 +22,7 @@ class QKey(QPushButton):
 
         self.show()
 
-    def set_color(self, red: int, green: int, blue: int):
+    def set_color(self, red: int, green: int, blue: int) -> None:
         if red < 0 or green < 0 or blue < 0:
             raise ValueError(
                 f"RGB values must be nonnegative. "

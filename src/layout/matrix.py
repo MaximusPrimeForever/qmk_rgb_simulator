@@ -7,7 +7,7 @@ from src.exceptions.io import JSONError
 from src.layout.key import Key
 
 
-class KeyboardLayout:
+class Matrix:
     """Parse keyboard info.json file, and load into python objects."""
 
     def __init__(self, path_to_json: str) -> None:
@@ -29,10 +29,10 @@ class KeyboardLayout:
         json_layout = first_layout["layout"]
 
         # Build matrix as a 2D array
-        max_row, max_col = self.get_max_row_and_column(json_layout)
-        self.matrix = [[None] * max_col for _ in range(max_row)]
-        self.matrix_width = max_col
-        self.matrix_height = max_row
+        max_row, max_col = self._get_max_row_and_column(json_layout)
+        self._array = [[None] * max_col for _ in range(max_row)]
+        self.width = max_col
+        self.height = max_row
 
         for row in json_layout:
             x, y = row['matrix']
@@ -40,12 +40,15 @@ class KeyboardLayout:
             if 'w' in row:
                 key_width = row['w']
 
-            self.matrix[x][y] = Key(x=row['x'], y=row['y'], width=key_width)
+            self._array[x][y] = Key(x=row['x'], y=row['y'], width=key_width)
 
         self.height_total, self.width_total = self.compute_keyboard_size(
-            self.matrix
+            self._array
         )
         pass
+
+    def __getitem__(self, *args):
+        self._array.__getitem__(*args)
 
     @staticmethod
     def verify_json_format(parsed_json: dict) -> bool:
@@ -53,7 +56,7 @@ class KeyboardLayout:
         return True
 
     @staticmethod
-    def get_max_row_and_column(keyboard_matrix: dict):
+    def _get_max_row_and_column(keyboard_matrix: dict):
         """Return the max row and column indices from the matrix layout."""
         x_max, y_max = 0, 0
         for row in keyboard_matrix:
@@ -69,21 +72,21 @@ class KeyboardLayout:
 
     def get_keys_in_row(self, row_index: int) -> list:
         """Return a list of keys in a given row."""
-        if not 0 <= row_index < self.matrix_height:
+        if not 0 <= row_index < self.height:
             raise IndexError(
-                f"Given row index {row_index} is out of bounds: 0-{self.matrix_height}."
+                f"Given row index {row_index} is out of bounds: 0-{self.height}."
             )
-        return self.matrix[row_index]
+        return self._array[row_index]
 
     def get_keys_in_column(self, col_index: int) -> list:
         """Return a list of keys in a given column."""
-        if not 0 <= col_index < self.matrix_width:
+        if not 0 <= col_index < self.width:
             raise IndexError(
-                f"Given row index {col_index} is out of bounds: 0-{self.matrix_width}."
+                f"Given row index {col_index} is out of bounds: 0-{self.width}."
             )
         keys = []
 
-        for row in self.matrix:
+        for row in self._array:
             keys.append(row[col_index])
 
         return keys
