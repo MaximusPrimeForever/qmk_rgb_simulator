@@ -4,13 +4,11 @@ import os
 
 from PyQt6.QtWidgets import (
     QMainWindow,
-    QPushButton,
     QHBoxLayout,
     QTextEdit,
-    QWidget,
-    QLabel
+    QWidget
 )
-from PyQt6.QtGui import QIcon, QPixmap
+from PyQt6.QtGui import QIcon
 
 from src.config.strings import APP_TITLE, ICONS_PATH
 from src.gui.keyboard import QKeyboard

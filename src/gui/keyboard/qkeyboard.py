@@ -1,7 +1,5 @@
 """Draw a full keyboard."""
 
-from typing import List
-
 from PyQt6.QtWidgets import QWidget
 
 from src.gui.keyboard import QKey
