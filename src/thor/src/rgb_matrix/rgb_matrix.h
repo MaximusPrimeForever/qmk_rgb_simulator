@@ -21,7 +21,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "rgb_matrix_types.h"
-// #include "color.h"
+#include "color.h"
 // #include "quantum.h"
 
 #ifdef IS31FL3731

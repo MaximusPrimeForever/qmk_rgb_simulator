@@ -2,6 +2,8 @@
 RGB_MATRIX_EFFECT(RAINDROPS)
 #    ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
 
+#include "lib8tion/random8.h"
+
 static void raindrops_set_color(int i, effect_params_t* params) {
     if (!HAS_ANY_FLAGS(g_led_config.flags[i], params->flags)) return;
     HSV hsv = {0, rgb_matrix_config.hsv.s, rgb_matrix_config.hsv.v};

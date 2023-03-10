@@ -17,13 +17,13 @@
  */
 
 #include "rgb_matrix.h"
-#include "progmem.h"
+// #include "progmem.h"
 #include "config.h"
-#include "eeprom.h"
+// #include "eeprom.h"
 #include <string.h>
 #include <math.h>
 
-#include <lib/lib8tion/lib8tion.h>
+// #include <lib/lib8tion/lib8tion.h>
 
 #ifndef RGB_MATRIX_CENTER
 const led_point_t k_rgb_matrix_center = {112, 32};

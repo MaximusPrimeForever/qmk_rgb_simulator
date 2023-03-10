@@ -1,5 +1,11 @@
 #pragma once
 
+#include <stdbool.h>
+#include <stdint.h>
+#include "lib8tion/scale8.h"
+#include "lib8tion/math8.h"
+
+
 typedef HSV (*dx_dy_dist_f)(HSV hsv, int16_t dx, int16_t dy, uint8_t dist, uint8_t time);
 
 bool effect_runner_dx_dy_dist(effect_params_t* params, dx_dy_dist_f effect_func) {

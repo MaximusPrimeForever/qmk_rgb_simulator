@@ -1,5 +1,5 @@
 /*
-Copyright 2012-2016 Jun Wako <wakojun@gmail.com>
+Copyright 2011 Jun Wako <wakojun@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,24 +18,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 #include <stdint.h>
-#include <stdbool.h>
-// #include "platform_deps.h"
-// #include "action.h"
-// #include "keycode.h"
-// #include "report.h"
-// #include "host.h"
-// #include "debug.h"
-// #include "keycode_config.h"
-// #include "gpio.h" // for pin_t
 
-// #include "quantum_keycodes.h"
-
-// translates key to keycode
-uint16_t keymap_key_to_keycode(uint8_t layer, keypos_t key);
-
-#ifdef ENCODER_MAP_ENABLE
-// Ensure we have a forward declaration for the encoder map
-#    include "encoder.h"
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-// #include "keymap_introspection.h"
+uint8_t bitpop(uint8_t bits);
+uint8_t bitpop16(uint16_t bits);
+uint8_t bitpop32(uint32_t bits);
+
+uint8_t biton(uint8_t bits);
+uint8_t biton16(uint16_t bits);
+uint8_t biton32(uint32_t bits);
+
+uint8_t  bitrev(uint8_t bits);
+uint16_t bitrev16(uint16_t bits);
+uint32_t bitrev32(uint32_t bits);
+
+#ifdef __cplusplus
+}
+#endif

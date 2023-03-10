@@ -18,7 +18,10 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+
 #include "color.h"
+#include "matrix_config.h"
+
 
 #if defined(__GNUC__)
 #    define PACKED __attribute__((__packed__))
