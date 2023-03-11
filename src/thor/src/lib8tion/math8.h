@@ -15,7 +15,7 @@
 /// program using plain "C" arithmetic and logic.
 ///@{
 
-#include "lib8tion_config.h"
+// #include "lib8tion_config.h"
 #include "scale8.h"
 
 /// add one byte to another, saturating at 0xFF

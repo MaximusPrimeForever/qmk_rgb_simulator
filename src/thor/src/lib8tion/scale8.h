@@ -18,7 +18,7 @@
 ///  In other words, it computes i * (scale / 256)
 ///  4 clocks AVR with MUL, 2 clocks ARM
 
-#include "lib8tion_config.h"
+// #include "lib8tion_config.h"
 
 
 LIB8STATIC_ALWAYS_INLINE uint8_t scale8( uint8_t i, fract8 scale)

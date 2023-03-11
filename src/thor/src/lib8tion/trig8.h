@@ -20,7 +20,7 @@
 #define sin16 sin16_C
 #endif
 
-#include "lib8tion_config.h"
+// #include "lib8tion_config.h"
 
 /// Fast 16-bit approximation of sin(x). This approximation never varies more than
 /// 0.69% from the floating point value you'd get by doing

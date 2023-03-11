@@ -1,6 +1,6 @@
 #pragma once
 
-#include "lib8tion/trig8.h"
+#include "lib8tion/lib8tion.h"
 
 typedef HSV (*sin_cos_i_f)(HSV hsv, int8_t sin, int8_t cos, uint8_t i, uint8_t time);
 

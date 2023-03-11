@@ -2,8 +2,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include "lib8tion/scale8.h"
-#include "lib8tion/math8.h"
+#include "lib8tion/lib8tion.h"
 
 
 typedef HSV (*dx_dy_dist_f)(HSV hsv, int16_t dx, int16_t dy, uint8_t dist, uint8_t time);

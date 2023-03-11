@@ -8,7 +8,7 @@
 ///  also somewhat less random.  You can add entropy.
 ///@{
 
-#include "lib8tion_config.h"
+// #include "lib8tion_config.h"
 
 // X(n+1) = (2053 * X(n)) + 13849)
 #define FASTLED_RAND16_2053  ((uint16_t)(2053))
