@@ -144,7 +144,7 @@ void eeconfig_update_rgb_matrix(void) {
 }
 
 void eeconfig_update_rgb_matrix_default(void) {
-    dprintf("eeconfig_update_rgb_matrix_default\n");
+    printf("eeconfig_update_rgb_matrix_default\n");
     rgb_matrix_config.enable = 1;
     rgb_matrix_config.mode   = RGB_MATRIX_DEFAULT_MODE;
     rgb_matrix_config.hsv    = (HSV){RGB_MATRIX_DEFAULT_HUE, RGB_MATRIX_DEFAULT_SAT, RGB_MATRIX_DEFAULT_VAL};

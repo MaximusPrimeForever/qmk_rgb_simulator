@@ -7,6 +7,8 @@ RGB_MATRIX_EFFECT(DIGITAL_RAIN)
 #            define RGB_DIGITAL_RAIN_DROPS 24
 #        endif
 
+#include "aux.h"
+
 bool DIGITAL_RAIN(effect_params_t* params) {
     // algorithm ported from https://github.com/tremby/Kaleidoscope-LEDEffect-DigitalRain
     const uint8_t drop_ticks           = 28;

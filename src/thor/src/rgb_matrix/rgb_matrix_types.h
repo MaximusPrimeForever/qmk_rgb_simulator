@@ -21,6 +21,7 @@
 
 #include "color.h"
 #include "matrix_config.h"
+#include "config.h"
 
 
 #if defined(__GNUC__)
